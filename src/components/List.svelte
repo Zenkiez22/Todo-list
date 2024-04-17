@@ -6,9 +6,15 @@
 
   function handleNewItem(e) {}
 
-  function handleUpdate(e) {}
+  function handleUpdate(e) {
+    const index = $items.findIndex((item) => item.id === e.detail.id);
+    $items[index] = e.detail;
+    TodoApi.save($items);
+  }
 
-  function handleDelete(e) {}
+  function handleDelete(e) {
+    console.log(e);
+  }
 
   onMount(async () => {
     // fetch from API
@@ -20,7 +26,7 @@
 
 <div class="list">
   {#each $items as item (item)}
-    <Item {...item} />
+    <Item {...item} on:update={handleUpdate} />
   {:else}
     <p class="list-status">No Items Exist</p>
   {/each}
