@@ -6,7 +6,7 @@
 <style>
   .container {
     width: 500px;
-    background: #009579;
+    background: #049ef7;
   }
 
   :global(.container *) {
