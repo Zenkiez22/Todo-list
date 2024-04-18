@@ -1,14 +1,13 @@
 <script>
   import { items } from '../stores';
 
-  console.log($items);
   $: itemCount = $items.length;
-  $: completedItemCount = $items.filter((item) => item.completed).length;
+  $: completedItemCount = $items.filter((item) => item.complete).length;
 </script>
 
 <div class="header">
-  <span>John Paul's To Do List</span>
-  <span>{completedItemCount}/{itemCount}</span>
+  <div>John Paul To-Do List</div>
+  <span> {completedItemCount}/{itemCount} </span>
 </div>
 
 <style>
@@ -17,7 +16,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    color: #ffffff;
+    color: #eeeeee;
     font-weight: bold;
     font-size: 1.5em;
     background: rgba(0, 0, 0, 0.1);
